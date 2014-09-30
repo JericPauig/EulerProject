@@ -104,12 +104,46 @@ def problem_5
 	return sum
 end
 
+def problem_6
+	n = 100
+	sum_of_squares = (n * (n + 1) * (2*n + 1))/6
+	square_of_sum = (n * (n + 1))/2
+	return sum_of_squares - square_of_sum
+end
+
+def problem_7
+	n = 10001
+	primes = []
+	i = 1
+	while 1 < 2 do
+		i += 1
+		j = 0
+		is_prime = true
+		while j < primes.length do
+			if i % primes[j] == 0
+				is_prime = false
+				break
+			end
+			j += 1
+		end
+		if is_prime
+			primes << i
+		end
+		if primes.length > n - 1
+			break
+		end
+	end
+	return primes.last
+end
+
 def output_problems
-	puts "Problem 1: #{problem_1}"
-	puts "Problem 2: #{problem_2}"
-	puts "Problem 3: #{problem_3}"
-	puts "Problem 4: #{problem_4}"
-	puts "Problem 5: #{problem_5}"
+	# puts "Problem 1: #{problem_1}"
+	# puts "Problem 2: #{problem_2}"
+	# puts "Problem 3: #{problem_3}"
+	# puts "Problem 4: #{problem_4}"
+	# puts "Problem 5: #{problem_5}"
+	# puts "Problem 6: #{problem_6}"
+	# puts "Problem 7: #{problem_7}"
 end
 
 
